@@ -1,0 +1,65 @@
+mongodb commands for databases:
+view all databases
+show dbs
+
+create a new or switch database
+use dbname
+
+view current database
+db
+
+Delete database
+db.dropDatabase()
+
+mongodb commands for Collections:
+
+show Collections
+show Collections
+
+create a collection named 'comments'
+db.createCollection('comments')
+
+to drop colections name 'contents'
+db.contents.drop()
+
+mongodb commands for rows:
+show all rows in a collection
+db.comments.find()
+
+find the first row matching the object
+db.comments.findOne({'name':'prashant'})
+
+Insert one rows 
+db.comments.insert({'name':'prashant',
+'lang':'mongodb'})
+
+Insert Many rows
+db.comments.insertMany([{'name':'prashant',
+'lang':'mongodb'},{'name':'prashant',
+'lang':'javascript'},{'name':'prashant',
+'lang':'c++'}])
+I
+show all rows collection (pretty()) function
+db.comments.find().pretty()
+
+search in a mongodb database
+db.comments.find({'lang':'javascript'})
+
+using limit function in collection output
+db.comments.find().pretty().limit(any number)
+
+count the number of rows in the output
+db.comments.find().count()
+
+Update a row
+db.comments.update({'lang':'c++'},{'name':'arun',
+'lang':'html/css'},{upsert:true})
+
+delete row
+db.comments.remove({'name':'prashant'})
+
+less than
+db.comments.find({member_since:{$lt:34}})
+
+greater than
+db.comments.find({member_since:{$gt:34}})
